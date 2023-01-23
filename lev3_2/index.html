@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Font Generator</title>
+	</head>
+	<body>
+		<!-- Erstelle ein Formular um die font-family des eingegeben Inhaltes zu verändern.
+Nutze zwei Input Felder. Eines mit dem type=”range” und einer mit dem type=”text”.
+Nutze auch ein select - in dem select soll es eine Auswahl mit folgenden Optionen geben:'Bodoni Moda', serif | 'Open Sans', sans-serif | 'Roboto', sans-serif | 'Yusei Magic', sans-serif; vergisst nicht die Schriftarten vorher über Google Fonts zu importieren 
+In beiden Input Felder und in dem select soll die Funktion changeFontsSize() mit onChange aufgerufen werden. (s. nächste Folie)
+Definiere in der Funktion changeFontsSize() neue Werte für innerHTML, font-size und font-family.
+Gebe deine Ergebnis in einer h1 aus.
+ -->
+		<form onsubmit="return false">
+			<h2>Font Generator</h2>
+
+			<input
+				onchange="changeFontsSize()"
+				type="range"
+				name="font-size"
+				id="font-size"
+			/>
+			<label for="font-size">Font Size</label>
+
+			<select onchange="changeFontsSize()" name="font-family" id="font-family">
+				<option value="monospace">Courier, monospace</option>
+				<option value="sans-serif">Tahoma, sans-serif</option>
+				<option value="serif">Times, serif</option>
+				<option value="fantasy">fantasy</option>
+			</select>
+
+			<input
+				onchange="changeFontsSize()"
+				type="text"
+				name="sample-text"
+				id="sample-text"
+			/>
+
+			<h1 id="sample-result"></h1>
+		</form>
+
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
